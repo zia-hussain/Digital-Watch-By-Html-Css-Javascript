@@ -1,6 +1,7 @@
 /*=============== CLOCK ===============*/
 const hour = document.getElementById('clock-hour'),
-      minutes = document.getElementById('clock-minutes')
+      minutes = document.getElementById('clock-minutes'),
+      seconds = document.getElementById('clock-second')
 
 const clock = () =>{
    // We get the Date object
@@ -10,11 +11,13 @@ const clock = () =>{
    // (current time) / 12(hours) * 360(deg circle)
    // (Current minute) / 60(minutes) * 360(deg circle)
    let hh = date.getHours() / 12 * 360,
-       mm = date.getMinutes() / 60 * 360
+       mm = date.getMinutes() / 60 * 360,
+       ss = date.getSeconds() / 60 * 360
 
    // We add a rotation to the elements
    hour.style.transform = `rotateZ(${hh + mm / 12}deg)`
    minutes.style.transform = `rotateZ(${mm}deg)`
+   seconds.style.transform = `rotateZ(${ss}deg)`
 }
 setInterval(clock, 1000) // (Updates every 1s) 1000 = 1s 
 
@@ -25,6 +28,7 @@ const dateDayWeek = document.getElementById('date-day-week'),
       dateYear = document.getElementById('date-year'),
       textHour = document.getElementById('text-hour'),
       textMinutes = document.getElementById('text-minutes'),
+      textSeconds = document.getElementById('text-second'),
       textAmPm = document.getElementById('text-ampm')
 
 const clockText = () =>{
@@ -38,6 +42,7 @@ const clockText = () =>{
        year = date.getFullYear(),
        hh = date.getHours(),
        mm = date.getMinutes(),
+       ss = date.getSeconds(),
        ampm
 
    // We get the days of the week and the months. (First day of the week Sunday)
@@ -71,6 +76,11 @@ const clockText = () =>{
    // If minutes is less than 10, add a 0 (01,02,03...09)
    if(mm < 10){mm = `0${mm}`}
 
-   textMinutes.innerHTML = mm
+   textMinutes.innerHTML =  `${mm}:`
+
+   if(ss < 10){ss = `0${ss}`}
+
+   textSeconds.innerHTML = `${ss}:`
 }
+
 setInterval(clockText, 1000) // (Updates every 1s) 1000 = 1s

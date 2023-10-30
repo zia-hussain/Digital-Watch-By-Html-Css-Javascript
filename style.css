@@ -102,9 +102,15 @@ body {
   height: 38px;
   background-color: var(--red-color);
 }
+.clock__second {
+  width: 1px;
+  height: 40px;
+  background-color: var(--red-color);
+}
 
 .clock__hour,
-.clock__minutes {
+.clock__minutes,
+.clock__second  {
   box-shadow: 0 0 6px hsla(0, 0%, 0%, .25);
   position: absolute;
   bottom: 50%;
@@ -129,7 +135,9 @@ body {
 .clock__day,
 .clock__year,
 .clock__text-hour,
-.clock__text-minutes {
+.clock__text-minutes,
+.clock__text-second
+  {
   font-size: var(--h2-font-size);
   font-weight: 600;
 }
@@ -189,6 +197,11 @@ body {
     width: 3px;
     height: 40px;
   }
+  
+  .clock__second {
+    width: 2px;
+    height: 70px;
+  }
 
   .clock__date {
     margin-bottom: 1.5rem;
@@ -203,7 +216,9 @@ body {
   .clock__day,
   .clock__year,
   .clock__text-hour,
-  .clock__text-minutes {
+  .clock__text-minutes,
+  .clock__text-second
+   {
     font-size: var(--h1-font-size);
   }
 }
