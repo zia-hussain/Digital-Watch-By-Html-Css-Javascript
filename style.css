@@ -95,17 +95,22 @@ body {
   width: 2px;
   height: 25px;
   background-color: var(--red-color);
+  border-radius: 50px;
 }
 
 .clock__minutes {
   width: 2px;
   height: 38px;
   background-color: var(--red-color);
+  border-radius: 50px;
+
 }
 .clock__second {
   width: 1px;
   height: 40px;
   background-color: var(--red-color);
+  border-radius: 50px;
+
 }
 
 .clock__hour,
